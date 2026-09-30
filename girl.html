@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>For Hanoud ✨</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg:#050506;
+    --gold:#d8b56a;
+    --gold2:#f6e2a6;
+    --white:#f8f6f0;
+    --muted:#a5a19a;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    background:var(--bg);
+    color:var(--white);
+    font-family:"Cairo",sans-serif;
+    overflow-x:hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(216,181,106,.13),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(112,75,150,.08),
+            transparent 25%
+        );
+
+    z-index:-3;
+}
+
+.noise{
+    position:fixed;
+    inset:0;
+    opacity:.035;
+    pointer-events:none;
+    z-index:50;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    position:fixed;
+    inset:0;
+    z-index:100;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:
+        max(25px, env(safe-area-inset-top))
+        22px
+        max(25px, env(safe-area-inset-bottom));
+
+    background:
+        radial-gradient(
+            circle at center,
+            #191612 0%,
+            #090909 45%,
+            #030304 100%
+        );
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+.intro.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+}
+
+.intro-content{
+    width:min(100%,600px);
+    text-align:center;
+}
+
+.intro-label{
+    font-size:11px;
+    letter-spacing:4px;
+    color:#918b82;
+    margin-bottom:24px;
+}
+
+.intro-title{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(55px,15vw,100px);
+    line-height:1;
+    font-weight:400;
+}
+
+.intro-title span{
+    color:var(--gold);
+}
+
+.intro-line{
+    width:55px;
+    height:1px;
+    margin:28px auto;
+    background:var(--gold);
+    box-shadow:0 0 18px rgba(216,181,106,.8);
+}
+
+.intro-text{
+    color:#aaa49a;
+    font-size:14px;
+    line-height:2;
+    margin-bottom:30px;
+}
+
+.enter{
+    min-height:52px;
+    padding:0 28px;
+
+    border:1px solid rgba(216,181,106,.5);
+    border-radius:100px;
+
+    background:rgba(216,181,106,.04);
+    color:var(--gold2);
+
+    font-family:"Cairo",sans-serif;
+    font-size:14px;
+
+    cursor:pointer;
+    transition:.4s;
+}
+
+.enter:active{
+    transform:scale(.96);
+}
+
+@media(hover:hover){
+    .enter:hover{
+        background:var(--gold);
+        color:#111;
+        box-shadow:0 0 35px rgba(216,181,106,.25);
+    }
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main{
+    min-height:100svh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:
+        35px 18px
+        max(35px, env(safe-area-inset-bottom));
+
+    position:relative;
+}
+
+.glow{
+    position:absolute;
+
+    width:min(90vw,650px);
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    background:rgba(216,181,106,.045);
+    filter:blur(70px);
+
+    animation:glow 8s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        transform:translate(-50px,-30px);
+    }
+
+    to{
+        transform:translate(50px,30px);
+    }
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+    width:min(100%,700px);
+
+    padding:
+        clamp(38px,9vw,75px)
+        clamp(20px,7vw,55px);
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:clamp(25px,6vw,38px);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        );
+
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.6),
+        inset 0 1px 0 rgba(255,255,255,.08);
+
+    position:relative;
+    z-index:2;
+
+    animation:cardIn 1.2s ease;
+}
+
+@keyframes cardIn{
+    from{
+        opacity:0;
+        transform:translateY(25px) scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* =========================
+   DECORATION
+========================= */
+
+.corner{
+    position:absolute;
+    width:25px;
+    height:25px;
+    border-color:rgba(216,181,106,.6);
+}
+
+.c1{
+    top:20px;
+    right:20px;
+    border-top:1px solid;
+    border-right:1px solid;
+}
+
+.c2{
+    top:20px;
+    left:20px;
+    border-top:1px solid;
+    border-left:1px solid;
+}
+
+.c3{
+    bottom:20px;
+    right:20px;
+    border-bottom:1px solid;
+    border-right:1px solid;
+}
+
+.c4{
+    bottom:20px;
+    left:20px;
+    border-bottom:1px solid;
+    border-left:1px solid;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.label{
+    color:#989187;
+    font-size:11px;
+    letter-spacing:4px;
+    margin-bottom:14px;
+}
+
+.name{
+    font-family:"Playfair Display",serif;
+
+    font-size:
+        clamp(55px,17vw,105px);
+
+    line-height:1.05;
+    font-weight:400;
+
+    background:
+        linear-gradient(
+            110deg,
+            #fff,
+            var(--gold2),
+            #fff,
+            var(--gold)
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:gold 7s linear infinite;
+}
+
+@keyframes gold{
+    to{
+        background-position:300%;
+    }
+}
+
+.subtitle{
+    margin-top:10px;
+    color:#aaa49b;
+    font-size:15px;
+}
+
+.divider{
+    width:90px;
+    height:1px;
+    margin:27px auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold),
+            transparent
+        );
+}
+
+.message{
+    color:#dedad3;
+
+    font-size:
+        clamp(14px,4vw,17px);
+
+    line-height:2.15;
+    font-weight:300;
+}
+
+.message strong{
+    color:var(--gold2);
+    font-weight:500;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.secret-btn{
+    margin-top:30px;
+
+    min-height:52px;
+    width:min(100%,260px);
+
+    border:1px solid rgba(216,181,106,.45);
+    border-radius:100px;
+
+    background:rgba(216,181,106,.035);
+
+    color:var(--gold2);
+
+    font-family:"Cairo",sans-serif;
+    font-size:14px;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.secret-btn:active{
+    transform:scale(.96);
+}
+
+@media(hover:hover){
+    .secret-btn:hover{
+        background:var(--gold);
+        color:#111;
+
+        box-shadow:
+            0 0 30px rgba(216,181,106,.22);
+
+        transform:translateY(-3px);
+    }
+}
+
+/* =========================
+   SECRET
+========================= */
+
+.secret{
+    max-height:0;
+    opacity:0;
+    overflow:hidden;
+
+    transition:
+        max-height 1s ease,
+        opacity .8s ease,
+        margin .8s ease;
+}
+
+.secret.show{
+    max-height:330px;
+    opacity:1;
+    margin-top:28px;
+}
+
+.secret p{
+    color:#e8e3da;
+
+    font-size:14px;
+    line-height:2.1;
+}
+
+.secret strong{
+    color:var(--gold2);
+}
+
+/* =========================
+   FLOATING SPARKLES
+========================= */
+
+.sparkle{
+    position:fixed;
+    color:var(--gold2);
+    font-size:12px;
+    opacity:.5;
+    pointer-events:none;
+
+    animation:sparkle 4s ease-in-out infinite;
+}
+
+.s1{
+    top:14%;
+    left:10%;
+}
+
+.s2{
+    top:23%;
+    right:10%;
+    animation-delay:1s;
+}
+
+.s3{
+    bottom:20%;
+    left:15%;
+    animation-delay:2s;
+}
+
+.s4{
+    bottom:15%;
+    right:16%;
+    animation-delay:3s;
+}
+
+@keyframes sparkle{
+    0%,100%{
+        opacity:.1;
+        transform:scale(.7) rotate(0);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.5) rotate(180deg);
+    }
+}
+
+.signature{
+    position:absolute;
+    bottom:
+        max(15px, env(safe-area-inset-bottom));
+
+    color:#5f5a53;
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media(max-width:380px){
+
+    .card{
+        padding:
+            34px 17px;
+    }
+
+    .name{
+        font-size:51px;
+    }
+
+    .message{
+        font-size:13px;
+    }
+
+    .subtitle{
+        font-size:13px;
+    }
+
+    .divider{
+        margin:21px auto;
+    }
+
+    .secret-btn{
+        margin-top:24px;
+    }
+}
+
+/* =========================
+   LANDSCAPE PHONE
+========================= */
+
+@media(max-height:600px) and (orientation:landscape){
+
+    main{
+        align-items:flex-start;
+        overflow-y:auto;
+        padding-top:25px;
+    }
+
+    .card{
+        margin:20px 0;
+    }
+}
+
+/* =========================
+   REDUCE MOTION
+========================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation:none !important;
+        transition:none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="noise"></div>
+
+
+
+<section class="intro" id="intro">
+
+    <div class="intro-content">
+
+        <div class="intro-label">
+            A PRIVATE SURPRISE
+        </div>
+
+        <h1 class="intro-title">
+            For <span>Hanoud</span>
+        </h1>
+
+        <div class="intro-line"></div>
+
+        <p class="intro-text">
+            حاجة صغيرة معمولة مخصوص علشانك...
+            <br>
+            افتحيها ❤️
+        </p>
+
+        <button class="enter" onclick="openSite()">
+            اكتشفي المفاجأة ✦
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- MAIN -->
+
+<main>
+
+    <div class="glow"></div>
+
+    <div class="sparkle s1">✦</div>
+    <div class="sparkle s2">✧</div>
+    <div class="sparkle s3">✦</div>
+    <div class="sparkle s4">✧</div>
+
+    <section class="card">
+
+        <div class="corner c1"></div>
+        <div class="corner c2"></div>
+        <div class="corner c3"></div>
+        <div class="corner c4"></div>
+
+        <div class="label">
+            HAPPY BIRTHDAY
+        </div>
+
+        <h2 class="name">
+            هنود
+        </h2>
+
+        <div class="subtitle">
+  احلي خالتووووو❤️
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="message">
+
+            في ناس وجودهم في حياتنا
+            بيخلي كل حاجة أجمل...
+
+            <br>
+
+            وإنتِ من الناس اللي
+            <strong>وجودهم له قيمة كبيرة.</strong>
+
+            <br>
+
+            كل سنة وإنتِ بخير،
+            وكل سنة وقلبك مليان فرحة،
+            وربنا يكتبلك أيام أجمل
+            من كل اللي فات.
+
+        </p>
+
+        <button
+            class="secret-btn"
+            onclick="showMessage()">
+
+            في رسالة مخصوص ليكي ✦
+
+        </button>
+
+        <div class="secret" id="secret">
+
+            <p>
+
+                يا <strong>هنود</strong> ❤️
+
+                <br>
+
+                أتمنى السنة الجديدة من عمرك
+                تكون بداية لكل حاجة جميلة
+                نفسك فيها.
+
+                <br>
+
+                ربنا يسعدك،
+                ويحفظك،
+                ويفرح قلبك دايمًا.
+
+                <br><br>
+
+                <strong>
+                    كل سنة وإنتِ طيبة وبخير وسعادة 🎂
+                </strong>
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <div class="signature">
+        MADE WITH LOVE • FOR HANOUD
+    </div>
+
+</main>
+
+
+<script>
+
+function openSite(){
+
+    document
+        .getElementById("intro")
+        .classList.add("hide");
+
+}
+
+function showMessage(){
+
+    document
+        .getElementById("secret")
+        .classList.toggle("show");
+
+}
+
+</script>
+
+</body>
+</html>
+```
+
+</body>
+</html>
